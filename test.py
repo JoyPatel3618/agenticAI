@@ -1,7 +1,14 @@
-from core.logger import get_logger
+from agents.planner_agent import PlannerAgent
+from agents.executor_agent import ExecutorAgent
+from agents.supervisor_agent import SupervisorAgent
 
-log1 = get_logger("PlannerAgent")
-log2 = get_logger("LayoutAgent")
 
-log1.info("planning started")
-log2.info("Layout made")
+planner = PlannerAgent("PlannerAgent")
+executor = ExecutorAgent("ExecutorAgent")
+supervisor = SupervisorAgent("SupervisorAgent")
+
+task = planner.plan("Test agentic execution flow")
+print("Before execution :",task)
+executor.run(task)
+print("After execution :",task)
+supervisor.review(task)
