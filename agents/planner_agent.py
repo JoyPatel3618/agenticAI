@@ -9,4 +9,4 @@ class PlannerAgent(BaseAgent):
         task = Task(description=goal)
         return task
     def run(self, task):
-        raise NotImplementedError("PlannerAgent doest not execute tasks. Use plan() instead.")
+        raise NotImplementedError("PlannerAgent doest not execute tasks. Use plan() instead")
