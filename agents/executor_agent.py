@@ -21,6 +21,7 @@ class ExecutorAgent(BaseAgent):
             self.logger.info(
                 f"Task {task.id} completed successfully"
                 )
+            
         except Exception as e:
             task.state=TaskState.FAILED
             self.logger.error(
